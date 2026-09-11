@@ -1,0 +1,91 @@
+html{
+    background-color:rgb(248, 248, 248);
+}
+
+body{
+    background-color: rgb(205, 232, 255);
+    text-align: center;
+}
+
+h1{
+    color:rgb(255, 251, 216);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav ul {
+
+    list-style-type: none;
+    margin: 0;
+
+    padding: 0;
+
+
+}
+
+nav li {
+
+    background-color: rgb(29, 29,  138);
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-size: large;
+
+}
+
+nav a {
+    color: #60bfff;
+    text-decoration: none;
+
+}
+.grid-container{
+    display: inline grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #2196F3;
+    padding: 10px
+}
+
+.item{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    grid-column: span 2;
+}
+
+.item2{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    grid-column: span 2;
+} 
+
+.item3{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    align-content: center;
+    text-align: right;
+    grid-column: span3;
+
+}
+
+nav {
+    background-color: #0c0077;
+
+}
+
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #0044ff;
+    text-decoration: none;
+}
+
