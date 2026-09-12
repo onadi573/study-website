@@ -27,22 +27,51 @@
   <div class="bg-white p-4 rounded-x1 shadow">
     <h2 class="font-semibold mb-2"> Upcoming </h2>
 
-  <div class="flex gap-2 mb-3">
-    <input id="taskInput" type="text" placeholder="Homework"
-      class="flex-1 border p-2 rounded"/>
-  <button onclick="addHomework()" class="bg-green-600 text-white px-4 rounded">
-    Add
-  </button>
-
-
-
-
+    <div class="flex gap-2 mb-3">
+      <input id="taskInput" type="text" placeholder="Homework"
+        class="flex-1 border p-2 rounded"/>
+      <button onclick="addHomework()" class="bg-green-600 text-white px-4 rounded">
+        Add
+      </button>
+    </div> 
+  
+    <ul id="taskList" class="space-y-6"></ul>
+    
+  
+  <div class="bg-white p-4 rounded-x1 shadow">
+    <h2 class="font-semibold mb-2"> Study Reminder </h2>
+    <input id="reminderMinutres" type="number" placeholder="Minutes"
+      class="border p-2 rounded w-32" />
+    <button onclick="setReminder()" class="ml-2 bg-purple-600 text-white px-3 py-2 rounded">
+      Set Reminder
+    </button>
   </div>
+</div>
 
+<script>
+/* ---------------- TASKS & GOAL ---------------- */
+let tasks = [];
+let dailyGoal = 0;
 
+function addTask() {
+  const text = taskInput.value.trim();
+  if (!text) return;
+  tasls.push({ text, done: false});
+  taskInput.value = "";
+  renderTasks();
+}
 
+function toggleTask(i) {
+  tasks[i].done = !tasks[i].done;
+  renderTasks();
+}
 
-  </div>
+function renderTasks() {
+  tasklist.innerHTML = "";
+  tasks.forEach((t, i)) => {}
+}
+
+</script>
 
 
 
