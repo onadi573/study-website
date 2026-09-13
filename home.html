@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"
+    <meta charset="UTF-8" />
     <title>Study Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
@@ -9,38 +9,38 @@
 
 <body class="bg-slate-100 min-h-screen p-6">
 
-<div class="max-w-4xl mx-auto space-y-6"
+<div class="max-w-4xl mx-auto space-y-6">
 
-  <h1 class="text-3x1 font-bold text-center"> Study App </h1>
+  <h1 class="text-3xl font-bold text-center"> Study App </h1>
 
-  <div class="bg-white p-4 rounded-x1 shadow">
+  <div class="bg-white p-4 rounded-xl shadow">
     <h2 class="font-semibold mb-2"> Daily Study Goal </h2>
-    <input id="goalInput" type="text" placeholder="e.g. Study for Math Test"
+    <input id="goalInput" type="number" placeholder="e.g. 5"
         class="border p-2 rounded w-32" />
     <button onclick="setGoal()" class="ml-2 bg-blue-600 text-white px-3 py-3 rounded">
       Set Goal
     </button>
-    <p id="goalStatus" class="mt-2 text-sm text-grey-600"></p>
-    <div
+    <p id="goalStatus" class="mt-2 text-sm text-gray-600"></p>
+  </div>
 
 
-  <div class="bg-white p-4 rounded-x1 shadow">
+  <div class="bg-white p-4 rounded-xl shadow">
     <h2 class="font-semibold mb-2"> Upcoming </h2>
 
     <div class="flex gap-2 mb-3">
-      <input id="taskInput" type="text" placeholder="Homework"
+      <input id="taskInput" type="text" placeholder="New Homework"
         class="flex-1 border p-2 rounded"/>
-      <button onclick="addHomework()" class="bg-green-600 text-white px-4 rounded">
+      <button onclick="addTask()" class="bg-green-600 text-white px-4 rounded">
         Add
       </button>
     </div> 
   
     <ul id="taskList" class="space-y-6"></ul>
-    
+  </div>
   
-  <div class="bg-white p-4 rounded-x1 shadow">
+  <div class="bg-white p-4 rounded-xl shadow">
     <h2 class="font-semibold mb-2"> Study Reminder </h2>
-    <input id="reminderMinutres" type="number" placeholder="Minutes"
+    <input id="reminderMinutes" type="number" placeholder="Minutes"
       class="border p-2 rounded w-32" />
     <button onclick="setReminder()" class="ml-2 bg-purple-600 text-white px-3 py-2 rounded">
       Set Reminder
@@ -56,7 +56,7 @@ let dailyGoal = 0;
 function addTask() {
   const text = taskInput.value.trim();
   if (!text) return;
-  tasls.push({ text, done: false});
+  tasks.push({ text, done: false});
   taskInput.value = "";
   renderTasks();
 }
@@ -67,11 +67,58 @@ function toggleTask(i) {
 }
 
 function renderTasks() {
-  tasklist.innerHTML = "";
-  tasks.forEach((t, i)) => {}
+  taskList.innerHTML = "";
+  tasks.forEach((t, i) => {
+    taskList.innerHTML += `
+      <li class="flex justify-between bg-slate-50 p-2 rounded">
+        <label class="flex gap-2">
+          <input type="checkbox" ${t.done ? "checked" : ""} onclick="toggleTask(${i})">
+          <span class="${t.done ? 'line-through text-gray-400' : ' '}">
+            ${t.text}
+          </span>
+        </label>
+      </li>`;
+  });
+  updateGoal();
 }
 
+function setGoal() {
+  dailyGoal = Number(goalInput.value);
+  updateGoal();
+}
+
+function updateGoal() {
+  const done = tasks.filter(t => t.done).length;
+  goalStatus.textContent = dailyGoal
+    ? `Completed ${done} / ${dailyGoal} tasks`
+    : "No goal set"; 
+}
+
+
+
+/* ---------------- REMINDER ----------------- */
+function setReminder() {
+  const min = Number(reminderMinutes.value);
+  if (!min) return;
+  
+  setTimeout(() => {
+    notify("Study Reminder", "Time of study");
+  }, min * 60000);
+
+  alert("Reminder set!");
+}
+
+function notify(title, body) {
+  if (Notification.permission === "granted") {
+    new Notification(title, { body });
+  } else {
+   Notification.requestPermission();
+  }
+}
 </script>
+
+</body>
+</html>
 
 
 
