@@ -60,12 +60,15 @@ h1 {
     box-shadow: 20px 20px 42px #0e1021, -20px -20px 42px #1c2244;
 }
 
-.pomodoro: :before {
+.pomodoro::before {
     content: "";
     position: absolute;
-    bor
+    border: 10px solid royal blue;
     border-radius: 50%;
-    width: 100%;
-    height: 100%;
-;
+    width: 22rem;
+    height: 22rem;
+}
+
+.time {
+
 }
