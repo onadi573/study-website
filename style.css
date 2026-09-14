@@ -70,5 +70,82 @@ h1 {
 }
 
 .time {
+    font-size: 5rem !important;
+    margin: 20px auto;
+}
 
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #2e325a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.button.active, .button:hover {
+    background-color: #020323;
+}
+
+.hidden {
+    display: block;
+}
+
+.timer-display {
+    font-size: 5rem;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+#start, #stop {
+    background-color: #2e325a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+#stop:hover {
+    background-color: tomato;
+}
+
+#start:hover {
+    background-color: #219a52;
+}
+
+#timer-message {
+    color: white;
+    background-color: tomato;
+    display: none;
+    padding: 5rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+/* Responsiveness */
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .container {
+        transform: scale(0.9);
+    }
+    .timer {
+        width: 500px;
+        
+    }
 }
