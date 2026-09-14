@@ -9,22 +9,41 @@
 
 <body>
 
-    <div id= "timer-message">Please select a timer before starting.</div>
+    <div id= "timer-message"> Pomodoro Timer: Study for 25 min and have a short 5 min break. Study for 25 min x4 to get a 30 min long break.</div>
     <div class="container"
-        <div class="timer">
+         class="timer">
             <h1> Pomodoro Timer </h1>
             <div class="button-container">
-                <button class="button" id="pomodoro-sessopm"
+                <button class="button" id="pomodoro-session">Pomodoro</button>
+                <button class="button" id="short-break">Short Break</button>
+                <button class="button" id="long Break">Long Break</button>
+            </div>
+
+            <main>
+                <div class="pomodoro">
+                    <div id="pomodoro-timer" class="timer-display" data-duration="25.00">
+                        <h1 class="time">25:00</h1>
+                    </div>
+
+                    <div id="short-break" class="timer-display" data-duration="5.00">
+                        <h1 class="time">5:00</h1>
+                    </div>
+
+                    <div id="long-break" class="timer-display" data-duration="30.00">
+                        <h1 class="time">30:00</h1>
+                    </div>
+                </div>
+            </main>
+
+            <div class="buttons">
+                <button id="start">START</button>
+                <button id="stop">STOP</button>
             </div>
         </div>
- 
+    </div>
 
-
+    <!-- JS -->
+     <script src="script.js"></script>
 </body>
 
-
-
-
-
-
-    <script src="https://cdn.tailwindcss.com"></script>
+</html>
