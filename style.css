@@ -56,14 +56,14 @@ h1 {
     margin: 2.5rem 0;
     text-align: center;
     border-radius: 50%;
-    background: #151932;
-    box-shadow: 20px 20px 42px #0e1021, -20px -20px 42px #1c2244;
+    background: #F4EEE5;
+    box-shadow: 20px 20px 42px #BCC5D5, -20px -20px 42px #EDECF3;
 }
 
 .pomodoro::before {
     content: "";
     position: absolute;
-    border: 10px solid royal blue;
+    border: 10px solid #F4EEE5;
     border-radius: 50%;
     width: 22rem;
     height: 22rem;
@@ -81,7 +81,7 @@ h1 {
 }
 
 .button {
-    background-color: #2e325a;
+    background-color: #EDECF3;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -92,7 +92,7 @@ h1 {
 }
 
 .button.active, .button:hover {
-    background-color: #020323;
+    background-color: #707070;
 }
 
 .hidden {
@@ -110,8 +110,8 @@ h1 {
 }
 
 #start, #stop {
-    background-color: #2e325a;
-    color: #fff;
+    background-color: #FAF7F3;
+    color: #707070;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -121,16 +121,16 @@ h1 {
 }
 
 #stop:hover {
-    background-color: tomato;
+    background-color: #707070;
 }
 
 #start:hover {
-    background-color: #219a52;
+    background-color: #707070;
 }
 
 #timer-message {
     color: white;
-    background-color: tomato;
+    background-color: #BCC5D4;
     display: none;
     padding: 5rem;
     font-size: 1rem;
