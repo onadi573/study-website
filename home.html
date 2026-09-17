@@ -7,30 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-slate-100 min-h-screen p-6">
+<body class="bg-[#E8E9ED] min-h-screen p-6">
 
 <div class="max-w-4xl mx-auto space-y-6">
+  <h1 class="text-3xl font-bold text-center text-[#707070]"> Study Website </h1>
 
-  <h1 class="text-3xl font-bold text-center"> Study App </h1>
 
-  <div class="bg-white p-4 rounded-xl shadow">
-    <h2 class="font-semibold mb-2"> Daily Study Goal </h2>
+
+  <div class="bg-[#FFFFFF] p-4 rounded-xl shadow">
+    <h2 class="font-semibold mb-2 text-[#707070]"> Daily Study Goal </h2>
     <input id="goalInput" type="number" placeholder="e.g. 5"
         class="border p-2 rounded w-32" />
-    <button onclick="setGoal()" class="ml-2 bg-blue-600 text-white px-3 py-3 rounded">
+    <button onclick="setGoal()" class="ml-2 bg-[#BCC5D5] text-[#707070] px-3 py-3 rounded">
       Set Goal
     </button>
-    <p id="goalStatus" class="mt-2 text-sm text-gray-600"></p>
+    <p id="goalStatus" class="mt-2 text-sm text-[#707070]"></p>
   </div>
 
 
-  <div class="bg-white p-4 rounded-xl shadow">
+  <div class="bg-[#FFFFFF] p-4 rounded-xl shadow">
     <h2 class="font-semibold mb-2"> Upcoming </h2>
 
     <div class="flex gap-2 mb-3">
       <input id="taskInput" type="text" placeholder="New Homework"
         class="flex-1 border p-2 rounded"/>
-      <button onclick="addTask()" class="bg-pink-600 text-white px-4 rounded">
+      <button onclick="addTask()" class="bg-[#EDECF3] text-[#707070] px-4 rounded">
         Add
       </button>
     </div> 
@@ -38,19 +39,23 @@
     <ul id="taskList" class="space-y-6"></ul>
   </div>
   
-  <div class="bg-white p-4 rounded-xl shadow">
-    <h2 class="font-semibold mb-2"> Study Reminder </h2>
+  <div class="bg-[#FFFFFF] p-4 rounded-xl shadow">
+    <h2 class="font-semibold mb-2 text-[#707070]"> Study Reminder </h2>
     <input id="reminderMinutes" type="number" placeholder="Minutes"
       class="border p-2 rounded w-32" />
-    <button onclick="setReminder()" class="ml-2 bg-purple-600 text-white px-3 py-2 rounded">
+    <button onclick="setReminder()" class="ml-2 bg-[#F4EEE5] text-[#707070] px-3 py-2 rounded">
       Set Reminder
     </button>
   </div>
 </div>
 
+
+
+<div style="text-align: center; margin-top: 20px;">
   <a href="timer.html">
     <button style="background-color:#BCC5D4;color:#707070;border-radius:5px;font-size: 25px;">Pomodoro Timer</button>
   </a>
+</div>
 
 <script>
 /* ---------------- TASKS & GOAL ---------------- */
@@ -74,10 +79,10 @@ function renderTasks() {
   taskList.innerHTML = "";
   tasks.forEach((t, i) => {
     taskList.innerHTML += `
-      <li class="flex justify-between bg-slate-50 p-2 rounded">
+      <li class="flex justify-between bg-[#FAF7F3] p-2 rounded">
         <label class="flex gap-2">
           <input type="checkbox" ${t.done ? "checked" : ""} onclick="toggleTask(${i})">
-          <span class="${t.done ? 'line-through text-gray-400' : ' '}">
+          <span class="${t.done ? 'line-through text-[#707070]' : ' '}">
             ${t.text}
           </span>
         </label>
