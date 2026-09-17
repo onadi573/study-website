@@ -58,10 +58,23 @@ function startTimer(timerDisplay) {
     timerDuration = timerDisplay.getAttribute("data-duration").split(":")[0]
 
     let durationInMilliseconds = timerDuration * 60 * 1000
-    let endTimestamp = Date.now
+    let endTimestamp = Date.now() + durationInMilliseconds
+    
+    myInterval = setInterval(() => {
+        const timeRemaining = new Date(endTimestamp - Date.now())
+        
+        if(timeRemaining )
+    })
 }
 
 
 
 
-startBtn.addEventListener("click", () =>)
+startBtn.addEventListener("click", () => {
+    if(currentTimer) {
+        startTimer(currentTimer)
+        timerMsg.style.display = "none"
+    } else {
+        timerMsg.style.display = "block"
+    }
+})
