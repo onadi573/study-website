@@ -1,14 +1,14 @@
 let pomodoro = document.getElementById("pomodoro-timer")
 let short = document.getElementById("short-timer")
 let long = document.getElementById("long-timer")
-let timers = document.querySelectorAll("timer-display")
+let timers = document.querySelectorAll(".timer-display")
 let session = document.getElementById("pomodoro-session")
 let shortBreak = document.getElementById("short-break")
 let longBreak = document.getElementById("long-break")
 let startBtn = document.getElementById("start")
 let stopBtn = document.getElementById("stop")
 let timerMsg = document.getElementById("timer-message")
-let button = document.getElementById(".button")
+let button = document.querySelector(".button")
 
 let currentTimer = null
 let myInterval = null
@@ -87,7 +87,7 @@ function startTimer(timerDisplay) {
         } else {
             const minutes = Math.floor(timeRemaining / 60000) 
             const seconds = ((timeRemaining % 60000) / 1000).toFixed(0)
-            const formattedTime = '${minutes}:${seconds.toString().padStart(2, "0")}'
+            const formattedTime = `${minutes}:${seconds.toString().padStart(2, "0")}`
             timerDisplay.textContent = formattedTime
         }
     }, 1000)
