@@ -31,13 +31,26 @@ function hideALL() {
 session.addEventListener("click", () => {
     hideALL()
 
+    pomodoro.style.display = "block"
+
+    session.classList.add("active")
+    shortBreak.classList.remove("active")
+    longBreak.classList.remove("active")
+
+    currentTimer = pomodoro
+})
+
+shortBreak.addEventListener("click", () => {
+    hideALL()
+
     short.style.display = "block"
 
     session.classList.remove("active")
     shortBreak.classList.add("active")
     longBreak.classList.remove("active")
-})
 
+    currentTimer = short
+})
 
 longBreak.addEventListener("click", () => {
     hideALL()
@@ -47,6 +60,8 @@ longBreak.addEventListener("click", () => {
     session.classList.remove("active")
     shortBreak.classList.remove("active")
     longBreak.classList.add("active")
+
+    currentTimer = long
 })
 
 // Start the timer on click
@@ -63,8 +78,19 @@ function startTimer(timerDisplay) {
     myInterval = setInterval(() => {
         const timeRemaining = new Date(endTimestamp - Date.now())
         
-        if(timeRemaining )
-    })
+        if(timeRemaining <= 0) {
+            clearInterval(myInterval)
+            timerDisplay.textContent = "00:00"
+
+            const alarm = new Audio("https://www.freespecialeffects.co.uk/soundfx/scifi/electronic.wav")
+            alarm.play()
+        } else {
+            const minutes = Math.floor(timeRemaining / 60000) 
+            const seconds = ((timeRemaining % 60000) / 1000).toFixed(0)
+            const formattedTime = '${minutes}:${seconds.toString().padStart(2, "0")}'
+            timerDisplay.textContent = formattedTime
+        }
+    }, 1000)
 }
 
 
