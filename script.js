@@ -104,3 +104,9 @@ startBtn.addEventListener("click", () => {
         timerMsg.style.display = "block"
     }
 })
+
+stopBtn.addEventListener("click", () => {
+    if(currentTimer) {
+        clearInterval(myInterval)
+    }
+})
